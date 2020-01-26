@@ -1,6 +1,8 @@
 // Working clock
 var $currentDay = $("#currentDay");
 
+var currentHour = moment().hours();
+
 function clock() {
 	var now = moment().format("dddd, MMMM Do YYYY, hh:mm:ss A");
 	$currentDay.html(now);
@@ -8,3 +10,5 @@ function clock() {
 }
 
 clock();
+
+console.log(currentHour);

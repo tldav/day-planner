@@ -6,7 +6,7 @@ body {
 
 textarea {
 	background: transparent;
-	border: none;
+	border: 1px solid;
 	resize: none;
 	color: #000000;
 	border-left: 1px solid black;
@@ -71,8 +71,3 @@ textarea:focus {
 .saveBtn:focus {
 	outline: none;
 }
-
-/* .row9 {
-	border: 3px solid black;
-	border-bottom: none;
-} */

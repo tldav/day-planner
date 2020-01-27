@@ -33,8 +33,7 @@ var hourArray = [
 ];
 
 // Global Variables
-var hourGrab = 0;
-
+var getHour = 0;
 var currentHour = moment().hours();
 
 // Realtime date and time display
@@ -46,18 +45,20 @@ function clock() {
 
 clock();
 
+// Defaults all timeblocks to green starting at midnight
 function newDay() {
 	$("textarea").addClass("future");
 	$("textarea").removeClass("present");
 	$("textarea").removeClass("past");
 }
 
-function hourChange() {
+//
+function colorChange() {
 	newDay();
-	hourArray[hourGrab].removeClass("future");
-	hourArray[hourGrab].removeClass("past");
-	hourArray[hourGrab].addClass("present");
-	for (i = hourGrab - 1; i > 0; i--) {
+	hourArray[getHour].removeClass("future");
+	hourArray[getHour].removeClass("past");
+	hourArray[getHour].addClass("present");
+	for (i = getHour - 1; i > 0; i--) {
 		hourArray[i].removeClass("future");
 		hourArray[i].removeClass("present");
 		hourArray[i].addClass("past");
@@ -68,49 +69,46 @@ function hourChange() {
 	}
 }
 
-console.log("current hour is " + currentHour);
-
-function tellTime() {
+function timeChange() {
 	switch (currentHour) {
 		case 9:
-			hourGrab = hourArray.indexOf($hour9);
-			hourChange();
+			getHour = hourArray.indexOf($hour9);
+			colorChange();
 			break;
 		case 10:
-			hourGrab = hourArray.indexOf($hour10);
-			hourChange();
+			getHour = hourArray.indexOf($hour10);
+			colorChange();
 			break;
 		case 11:
-			hourGrab = hourArray.indexOf($hour11);
-			hourChange();
+			getHour = hourArray.indexOf($hour11);
+			colorChange();
 			break;
 		case 12:
-			hourGrab = hourArray.indexOf($hour12);
-			hourChange();
+			getHour = hourArray.indexOf($hour12);
+			colorChange();
 			break;
 		case 13:
-			hourGrab = hourArray.indexOf($hour13);
-			hourChange();
+			getHour = hourArray.indexOf($hour13);
+			colorChange();
 			break;
 		case 14:
-			hourGrab = hourArray.indexOf($hour14);
-			hourChange();
+			getHour = hourArray.indexOf($hour14);
+			colorChange();
 			break;
 		case 15:
-			hourGrab = hourArray.indexOf($hour15);
-			hourChange();
+			getHour = hourArray.indexOf($hour15);
+			colorChange();
 			break;
 		case 16:
-			hourGrab = hourArray.indexOf($hour16);
-			hourChange();
-			console.log(hourGrab);
+			getHour = hourArray.indexOf($hour16);
+			colorChange();
 			break;
 		case 17:
-			hourGrab = hourArray.indexOf($hour17);
-			hourChange();
+			getHour = hourArray.indexOf($hour17);
+			colorChange();
 		default:
 			newDay();
 	}
 }
 
-tellTime();
+timeChange();

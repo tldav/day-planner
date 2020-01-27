@@ -29,8 +29,7 @@ var hourArray = [
 	$hour14,
 	$hour15,
 	$hour16,
-	$hour17,
-	18
+	$hour17
 ];
 
 // Global Variables
@@ -54,14 +53,13 @@ function midnight() {
 }
 
 function present() {
+	$("textarea").addClass("future");
+	$("textarea").removeClass("present");
+	$("textarea").removeClass("past");
 	hourArray[hourGrab].removeClass("future");
 	hourArray[hourGrab].removeClass("past");
 	hourArray[hourGrab].addClass("present");
-}
-
-function past() {
 	for (i = hourGrab - 1; i > 0; i--) {
-		console.log(hourArray[i]);
 		hourArray[i].removeClass("future");
 		hourArray[i].removeClass("present");
 		hourArray[i].addClass("past");
@@ -75,8 +73,8 @@ function past() {
 console.log("current hour is " + currentHour);
 
 function tellTime() {
-	switch (11) {
-		case 0:
+	switch (0) {
+		case (0, 1, 2, 3, 4, 5, 6, 7, 8):
 			midnight();
 			break;
 		case 9:
@@ -85,30 +83,22 @@ function tellTime() {
 			break;
 		case 10:
 			hourGrab = hourArray.indexOf($hour10);
-			midnight();
 			present();
 			break;
 		case 11:
 			hourGrab = hourArray.indexOf($hour11);
-
-			midnight();
 			present();
-			past();
-
 			break;
 		case 12:
 			hourGrab = hourArray.indexOf($hour12);
-			midnight();
 			present();
 			break;
 		case 13:
 			hourGrab = hourArray.indexOf($hour13);
-			midnight();
 			present();
 			break;
 		case 14:
 			hourGrab = hourArray.indexOf($hour14);
-			midnight();
 			present();
 			break;
 		case 15:

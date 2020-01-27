@@ -34,7 +34,7 @@ var hourArray = [
 
 // Global Variables
 var hourGrab = 0;
-var i = 0;
+
 var currentHour = moment().hours();
 
 // Realtime date and time display
@@ -53,9 +53,7 @@ function midnight() {
 }
 
 function present() {
-	$("textarea").addClass("future");
-	$("textarea").removeClass("present");
-	$("textarea").removeClass("past");
+	midnight();
 	hourArray[hourGrab].removeClass("future");
 	hourArray[hourGrab].removeClass("past");
 	hourArray[hourGrab].addClass("present");
@@ -73,10 +71,7 @@ function present() {
 console.log("current hour is " + currentHour);
 
 function tellTime() {
-	switch (0) {
-		case (0, 1, 2, 3, 4, 5, 6, 7, 8):
-			midnight();
-			break;
+	switch (currentHour) {
 		case 9:
 			hourGrab = hourArray.indexOf($hour9);
 			present();
@@ -113,6 +108,9 @@ function tellTime() {
 		case 17:
 			hourGrab = hourArray.indexOf($hour17);
 			present();
+
+		default:
+			midnight();
 	}
 }
 

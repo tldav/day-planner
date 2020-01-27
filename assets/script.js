@@ -46,14 +46,14 @@ function clock() {
 
 clock();
 
-function midnight() {
+function newDay() {
 	$("textarea").addClass("future");
 	$("textarea").removeClass("present");
 	$("textarea").removeClass("past");
 }
 
-function present() {
-	midnight();
+function hourChange() {
+	newDay();
 	hourArray[hourGrab].removeClass("future");
 	hourArray[hourGrab].removeClass("past");
 	hourArray[hourGrab].addClass("present");
@@ -74,43 +74,42 @@ function tellTime() {
 	switch (currentHour) {
 		case 9:
 			hourGrab = hourArray.indexOf($hour9);
-			present();
+			hourChange();
 			break;
 		case 10:
 			hourGrab = hourArray.indexOf($hour10);
-			present();
+			hourChange();
 			break;
 		case 11:
 			hourGrab = hourArray.indexOf($hour11);
-			present();
+			hourChange();
 			break;
 		case 12:
 			hourGrab = hourArray.indexOf($hour12);
-			present();
+			hourChange();
 			break;
 		case 13:
 			hourGrab = hourArray.indexOf($hour13);
-			present();
+			hourChange();
 			break;
 		case 14:
 			hourGrab = hourArray.indexOf($hour14);
-			present();
+			hourChange();
 			break;
 		case 15:
 			hourGrab = hourArray.indexOf($hour15);
-			present();
+			hourChange();
 			break;
 		case 16:
 			hourGrab = hourArray.indexOf($hour16);
-			present();
+			hourChange();
 			console.log(hourGrab);
 			break;
 		case 17:
 			hourGrab = hourArray.indexOf($hour17);
-			present();
-
+			hourChange();
 		default:
-			midnight();
+			newDay();
 	}
 }
 

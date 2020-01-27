@@ -71,3 +71,7 @@ textarea:focus {
 .saveBtn:focus {
 	outline: none;
 }
+
+#start {
+	display: none;
+}

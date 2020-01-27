@@ -1,5 +1,6 @@
 // DOM Variables
 var $currentDay = $("#currentDay");
+var $start = $("#start");
 var $hour9 = $("#hour-9");
 var $hour10 = $("#hour-10");
 var $hour11 = $("#hour-11");
@@ -20,7 +21,7 @@ var hourArray = [
 	5,
 	6,
 	7,
-	8,
+	$start,
 	$hour9,
 	$hour10,
 	$hour11,

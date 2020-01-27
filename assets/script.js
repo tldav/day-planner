@@ -1,4 +1,4 @@
-// Working clock
+// DOM Variables
 var $currentDay = $("#currentDay");
 var $hour9 = $("#hour-9");
 var $hour10 = $("#hour-10");
@@ -10,6 +10,7 @@ var $hour15 = $("#hour-15");
 var $hour16 = $("#hour-16");
 var $hour17 = $("#hour-17");
 
+// Array of hours
 var hourArray = [
 	0,
 	1,
@@ -28,13 +29,16 @@ var hourArray = [
 	$hour14,
 	$hour15,
 	$hour16,
-	$hour17
+	$hour17,
+	18
 ];
 
-var hourGrab;
-
+// Global Variables
+var hourGrab = 0;
+var i = 0;
 var currentHour = moment().hours();
 
+// Realtime date and time display
 function clock() {
 	var now = moment().format("dddd, MMMM Do YYYY, hh:mm:ss A");
 	$currentDay.html(now);
@@ -56,15 +60,22 @@ function present() {
 }
 
 function past() {
-	hourArray[hourGrab - 1].removeClass("future");
-	hourArray[hourGrab - 1].removeClass("present");
-	hourArray[hourGrab - 1].addClass("past");
+	for (i = hourGrab - 1; i > 0; i--) {
+		console.log(hourArray[i]);
+		hourArray[i].removeClass("future");
+		hourArray[i].removeClass("present");
+		hourArray[i].addClass("past");
+
+		if (i <= 9) {
+			return;
+		}
+	}
 }
 
 console.log("current hour is " + currentHour);
 
 function tellTime() {
-	switch (currentHour) {
+	switch (11) {
 		case 0:
 			midnight();
 			break;
@@ -74,24 +85,31 @@ function tellTime() {
 			break;
 		case 10:
 			hourGrab = hourArray.indexOf($hour10);
+			midnight();
 			present();
 			break;
 		case 11:
 			hourGrab = hourArray.indexOf($hour11);
+
+			midnight();
 			present();
+			past();
+
 			break;
 		case 12:
 			hourGrab = hourArray.indexOf($hour12);
+			midnight();
 			present();
 			break;
 		case 13:
 			hourGrab = hourArray.indexOf($hour13);
+			midnight();
 			present();
 			break;
 		case 14:
 			hourGrab = hourArray.indexOf($hour14);
+			midnight();
 			present();
-
 			break;
 		case 15:
 			hourGrab = hourArray.indexOf($hour15);
@@ -101,9 +119,6 @@ function tellTime() {
 			hourGrab = hourArray.indexOf($hour16);
 			present();
 			console.log(hourGrab);
-
-			var poo = hourGrab - 1;
-			console.log(poo);
 			break;
 		case 17:
 			hourGrab = hourArray.indexOf($hour17);

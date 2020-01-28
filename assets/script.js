@@ -34,10 +34,14 @@ var hourArray = [
 ];
 
 // Global Variables
-var getHour = 0;
+// var getHour = 0;
 // Targets current hour with moment.js
 var currentHour = moment().hours();
 
+var getHour = hourArray[currentHour];
+
+console.log(currentHour);
+console.log(getHour);
 // Realtime date and time display
 function clock() {
 	var now = moment().format("dddd, MMMM Do YYYY, hh:mm:ss A");
@@ -56,9 +60,9 @@ function newDay() {
 
 // Keeps all timeblocks gray between 6 PM and midnight
 function afterHours() {
-	hourArray[getHour].removeClass("future");
-	hourArray[getHour].removeClass("present");
-	hourArray[getHour].addClass("past");
+	$("textarea").removeClass("future");
+	$("textarea").removeClass("present");
+	$("textarea").addClass("past");
 }
 
 // Handles the color change of each row
@@ -90,48 +94,48 @@ function timeChange() {
 			newDay();
 			break;
 		case 9:
-			getHour = hourArray.indexOf($hour9);
+			// getHour = hourArray.indexOf($hour9);
 			colorChange();
 			break;
 		case 10:
-			getHour = hourArray.indexOf($hour10);
+			// getHour = hourArray.indexOf($hour10);
 			colorChange();
 			break;
 		case 11:
-			getHour = hourArray.indexOf($hour11);
+			// getHour = hourArray.indexOf($hour11);
 			colorChange();
 			break;
 		case 12:
-			getHour = hourArray.indexOf($hour12);
+			// getHour = hourArray.indexOf($hour12);
 			colorChange();
 			break;
 		case 13:
-			getHour = hourArray.indexOf($hour13);
+			// getHour = hourArray.indexOf($hour13);
 			colorChange();
 			break;
 		case 14:
-			getHour = hourArray.indexOf($hour14);
+			// getHour = hourArray.indexOf($hour14);
 			colorChange();
 			break;
 		case 15:
-			getHour = hourArray.indexOf($hour15);
+			// getHour = hourArray.indexOf($hour15);
 			colorChange();
 			break;
 		case 16:
-			getHour = hourArray.indexOf($hour16);
+			// getHour = hourArray.indexOf($hour16);
 			colorChange();
 			break;
 		case 17:
-			getHour = hourArray.indexOf($hour17);
+			// getHour = hourArray.indexOf($hour17);
 			colorChange();
-			break;
-		case 18:
-		case 19:
-		case 20:
-		case 21:
-		case 22:
-		case 23:
-			afterHours();
+		// 	break;
+		// case 18:
+		// case 19:
+		// case 20:
+		// case 21:
+		// case 22:
+		// case 23:
+		// 	afterHours();
 	}
 }
 

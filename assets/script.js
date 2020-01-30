@@ -11,7 +11,15 @@ var $hour15 = $("#hour-15");
 var $hour16 = $("#hour-16");
 var $hour17 = $("#hour-17");
 var $saveBtn = $(".saveBtn");
-
+var $btn9 = $("#btn-9");
+var $btn10 = $("#btn-10");
+var $btn11 = $("#btn-11");
+var $btn12 = $("#btn-12");
+var $btn13 = $("#btn-13");
+var $btn14 = $("#btn-14");
+var $btn15 = $("#btn-15");
+var $btn16 = $("#btn-16");
+var $btn17 = $("#btn-17");
 var $clearBtn = $("#clearBtn");
 
 // Array of hours. The placeholder items sync the array index with the current hour.
@@ -140,42 +148,228 @@ function timeChange() {
 
 timeChange();
 
-var saveData = [];
-
-function renderLocal() {
-	var savedInput = localStorage.getItem("input");
-
-	$hour9.text(savedInput);
-	$hour10.text(savedInput);
-	$hour11.text(savedInput);
-	$hour12.text(savedInput);
-	$hour13.text(savedInput);
-	$hour14.text(savedInput);
-	$hour15.text(savedInput);
-	$hour16.text(savedInput);
-	$hour17.text(savedInput);
-}
-
-renderLocal();
-
-$saveBtn.on("click", function(e) {
-	e.preventDefault();
-
-	var targetBtn = $(e.target);
-	var textarea = targetBtn.prev();
-
-	console.log(textarea);
-
-	var userInput = textarea.val();
-
-	localStorage.setItem("input", userInput);
-	renderLocal();
-
-	console.log(userInput);
-});
-
 // Clears local storage and all text boxes by refreshing the page.
 $clearBtn.on("click", function() {
 	localStorage.clear();
 	location.reload();
 });
+
+function local9() {
+	var savedInput = localStorage.getItem("input9");
+
+	$hour9.text(savedInput);
+}
+
+function local10() {
+	var savedInput = localStorage.getItem("input10");
+
+	$hour10.text(savedInput);
+}
+
+function local11() {
+	var savedInput = localStorage.getItem("input11");
+
+	$hour11.text(savedInput);
+}
+
+function local12() {
+	var savedInput = localStorage.getItem("input12");
+
+	$hour12.text(savedInput);
+}
+
+function local13() {
+	var savedInput = localStorage.getItem("input13");
+
+	$hour13.text(savedInput);
+}
+
+function local14() {
+	var savedInput = localStorage.getItem("input14");
+
+	$hour14.text(savedInput);
+}
+
+function local15() {
+	var savedInput = localStorage.getItem("input15");
+
+	$hour15.text(savedInput);
+}
+
+function local16() {
+	var savedInput = localStorage.getItem("input16");
+
+	$hour16.text(savedInput);
+}
+
+function local17() {
+	var savedInput = localStorage.getItem("input17");
+
+	$hour17.text(savedInput);
+}
+
+local9();
+local10();
+local11();
+local12();
+local13();
+local14();
+local15();
+local16();
+local17();
+
+$btn9.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn9.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input9", userInput);
+	local9();
+});
+
+$btn10.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn10.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input10", userInput);
+	local9();
+});
+
+$btn11.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn11.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input11", userInput);
+	local9();
+});
+
+$btn12.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn12.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input12", userInput);
+	local9();
+});
+
+$btn13.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn13.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input13", userInput);
+	local9();
+});
+
+$btn14.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn14.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input14", userInput);
+	local9();
+});
+
+$btn15.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn15.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input15", userInput);
+	local9();
+});
+
+$btn16.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn16.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input16", userInput);
+	local9();
+});
+
+$btn17.on("click", function(e) {
+	e.preventDefault();
+	e.stopPropagation();
+
+	var textarea = $btn17.prev();
+	console.log(textarea);
+
+	var userInput = textarea.val();
+
+	localStorage.setItem("input17", userInput);
+	local9();
+});
+
+/*****************************************
+ * Failed attempt at DRY code
+ * 
+
+// var saveData = [];
+
+// function renderLocal() {
+// 	var savedInput = localStorage.getItem("input");
+
+// 	$hour9.text(savedInput);
+// 	$hour10.text(savedInput);
+// 	$hour11.text(savedInput);
+// 	$hour12.text(savedInput);
+// 	$hour13.text(savedInput);
+// 	$hour14.text(savedInput);
+// 	$hour15.text(savedInput);
+// 	$hour16.text(savedInput);
+// 	$hour17.text(savedInput);
+// }
+
+// renderLocal();
+
+// $saveBtn.on("click", function(e) {
+// 	e.preventDefault();
+
+// 	var targetBtn = $(e.target);
+// 	var textarea = targetBtn.prev();
+
+// 	console.log(textarea);
+
+// 	var userInput = textarea.val();
+
+// 	localStorage.setItem("input", userInput);
+// 	renderLocal();
+
+// 	console.log(userInput);
+// });
+*/

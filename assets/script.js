@@ -140,16 +140,27 @@ function timeChange() {
 
 timeChange();
 
+var saveData = [];
+
 function renderLocal() {
 	var savedInput = localStorage.getItem("input");
 
 	$hour9.text(savedInput);
+	$hour10.text(savedInput);
+	$hour11.text(savedInput);
+	$hour12.text(savedInput);
+	$hour13.text(savedInput);
+	$hour14.text(savedInput);
+	$hour15.text(savedInput);
+	$hour16.text(savedInput);
+	$hour17.text(savedInput);
 }
 
 renderLocal();
 
 $saveBtn.on("click", function(e) {
 	e.preventDefault();
+
 	var targetBtn = $(e.target);
 	var textarea = targetBtn.prev();
 
@@ -159,10 +170,12 @@ $saveBtn.on("click", function(e) {
 
 	localStorage.setItem("input", userInput);
 	renderLocal();
+
+	console.log(userInput);
 });
 
 // Clears local storage and all text boxes by refreshing the page.
-$clearBtn.on("click", function(e) {
+$clearBtn.on("click", function() {
 	localStorage.clear();
 	location.reload();
 });

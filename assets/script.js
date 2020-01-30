@@ -161,8 +161,8 @@ $saveBtn.on("click", function(e) {
 	renderLocal();
 });
 
-// $clearBtn.on("click", function(e) {
-// 	e.preventDefault();
-// 	var blank = "";
-// 	$("textarea").text(blank);
-// });
+// Clears local storage and all text boxes by refreshing the page.
+$clearBtn.on("click", function(e) {
+	localStorage.clear();
+	location.reload();
+});

@@ -79,7 +79,7 @@ textarea:focus {
 	display: none;
 }
 
-/* #clearBtn {
+#clearBtn {
 	margin-top: 5px;
 	margin-bottom: 20px;
 	width: 100%;
@@ -89,4 +89,4 @@ textarea:focus {
 	height: 50px;
 	background-color: crimson;
 	border: none;
-} */
+}

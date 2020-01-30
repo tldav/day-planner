@@ -10,6 +10,7 @@ var $hour14 = $("#hour-14");
 var $hour15 = $("#hour-15");
 var $hour16 = $("#hour-16");
 var $hour17 = $("#hour-17");
+var $saveBtn = $(".saveBtn");
 
 // Array of hours. The placeholder items sync the array index with the current hour.
 var hourArray = [
@@ -137,3 +138,21 @@ function timeChange() {
 }
 
 timeChange();
+
+function renderLocal() {
+	var $input = $("textarea").val();
+
+	$input.text = localStorage.getItem("input");
+}
+
+renderLocal();
+
+$saveBtn.on("click", function() {
+	var $input = $("textarea").val();
+
+	console.log($input);
+	console.log(this);
+
+	localStorage.setItem("input", $input);
+	renderLocal();
+});

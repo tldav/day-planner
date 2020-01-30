@@ -78,3 +78,15 @@ textarea:focus {
 #start {
 	display: none;
 }
+
+/* #clearBtn {
+	margin-top: 5px;
+	margin-bottom: 20px;
+	width: 100%;
+	border-radius: 15px;
+	font-weight: bold;
+	color: white;
+	height: 50px;
+	background-color: crimson;
+	border: none;
+} */

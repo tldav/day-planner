@@ -12,6 +12,8 @@ var $hour16 = $("#hour-16");
 var $hour17 = $("#hour-17");
 var $saveBtn = $(".saveBtn");
 
+var $clearBtn = $("#clearBtn");
+
 // Array of hours. The placeholder items sync the array index with the current hour.
 var hourArray = [
 	0,
@@ -86,7 +88,6 @@ function colorChange() {
 
 // Tracks the hour of the day and targets the appropriate timeblock for color change
 function timeChange() {
-	currentHour = 14;
 	switch (currentHour) {
 		default:
 			newDay();
@@ -140,19 +141,28 @@ function timeChange() {
 timeChange();
 
 function renderLocal() {
-	var $input = $("textarea").val();
+	var savedInput = localStorage.getItem("input");
 
-	$input.text = localStorage.getItem("input");
+	$hour9.text(savedInput);
 }
 
 renderLocal();
 
-$saveBtn.on("click", function() {
-	var $input = $("textarea").val();
+$saveBtn.on("click", function(e) {
+	e.preventDefault();
+	var targetBtn = $(e.target);
+	var textarea = targetBtn.prev();
 
-	console.log($input);
-	console.log(this);
+	console.log(textarea);
 
-	localStorage.setItem("input", $input);
+	var userInput = textarea.val();
+
+	localStorage.setItem("input", userInput);
 	renderLocal();
 });
+
+// $clearBtn.on("click", function(e) {
+// 	e.preventDefault();
+// 	var blank = "";
+// 	$("textarea").text(blank);
+// });

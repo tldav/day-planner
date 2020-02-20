@@ -1,4 +1,4 @@
-# hw5-js-scheduler
+# day-planner
 
 Work day scheduler created using JavaScript, jQuery, and moment.js
 
@@ -10,6 +10,6 @@ All of the time blocks are textareas. The user can schedule their daily activies
 
 The clear button will delete all locally saved data.
 
-The deployed application can be found at (https://tldav.github.io/hw5-js-scheduler/)
+The deployed application can be found at https://tldav.github.io/hw5-js-scheduler/
 
 ![Work Day Scheduler](/assets/js-scheduler.PNG)

@@ -10,6 +10,6 @@ All of the time blocks are textareas. The user can schedule their daily activies
 
 The clear button will delete all locally saved data.
 
-The deployed application can be found at https://tldav.github.io/hw5-js-scheduler/
+The deployed application can be found at https://tldav.github.io/day-planner/
 
 ![Work Day Scheduler](/assets/js-scheduler.PNG)
